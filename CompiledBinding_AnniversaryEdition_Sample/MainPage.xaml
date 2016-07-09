@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="CompiledBinding_AnniversaryEdition_Sample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CompiledBinding_AnniversaryEdition_Sample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        
+        <!-- 01 - Function binding -->
+        <TextBlock Text="Function Binding" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" />
+        <TextBlock Text="{x:Bind Today.ToString('d', {x:Null})}" />
+        <TextBlock Text="{x:Bind Roberts.GetFullname()}" />
+        <TextBlock Text="{x:Bind GetHelloWorld()}" />
+
+        <!-- 02 - Dictionary indexers -->
+        <TextBlock Text="Dictionary indexers" FontSize="20" FontWeight="Bold" Margin="0,20,0,10" />
+        <TextBlock Text="{x:Bind Dictionary['A']}" />
+        <TextBlock Text="{x:Bind Dictionary['B']}" />
+        <TextBlock Text="{x:Bind Dictionary['C']}" />
+
+        <!-- 03 - Explicit value cast -->
+        <TextBlock Text="Explicit value cast" FontSize="20" FontWeight="Bold" Margin="0,20,0,10" />
+        <CheckBox Content="IsThreeState = Null" IsThreeState="{x:Bind (x:Boolean)IsThreeStateNull}" />
+        <CheckBox Content="IsThreeState = False" IsThreeState="{x:Bind (x:Boolean)IsThreeStateFalse}" />
+        <CheckBox Content="IsThreeState = True" IsThreeState="{x:Bind (x:Boolean)IsThreeStateTrue}" />
+
+        <!-- 04 - Implicit Visibility conversion -->
+        <TextBlock Text="Implicit Visibility conversion" FontSize="20" FontWeight="Bold" Margin="0,20,0,0" />
+        <Border Height="30" Width="100" Background="Red">
+            <TextBlock Text="I'm not visible !" Visibility="{x:Bind (Visibility)IsVisibleFalse}" />
+        </Border>
+        <Border Height="30" Width="100" Background="Blue">
+            <TextBlock Text="I'm visible !" Visibility="{x:Bind (Visibility)IsVisibleTrue}" />
+        </Border>
+
+    </StackPanel>
+</Page>
