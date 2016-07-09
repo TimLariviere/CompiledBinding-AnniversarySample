@@ -41,6 +41,7 @@ namespace CompiledBinding_AnniversaryEdition_Sample
 
         #region 03 - Explicit value cast
 
+        public AClass A = new BClass();
         public bool? IsThreeStateNull = null;
         public bool? IsThreeStateFalse = false;
         public bool? IsThreeStateTrue = true;

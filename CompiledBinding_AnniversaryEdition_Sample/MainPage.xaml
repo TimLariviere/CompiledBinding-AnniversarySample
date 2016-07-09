@@ -23,6 +23,7 @@
 
         <!-- 03 - Explicit value cast -->
         <TextBlock Text="Explicit value cast" FontSize="20" FontWeight="Bold" Margin="0,20,0,10" />
+        <local:BControl B="{x:Bind (local:BClass)A}" />
         <CheckBox Content="IsThreeState = Null" IsThreeState="{x:Bind (x:Boolean)IsThreeStateNull}" />
         <CheckBox Content="IsThreeState = False" IsThreeState="{x:Bind (x:Boolean)IsThreeStateFalse}" />
         <CheckBox Content="IsThreeState = True" IsThreeState="{x:Bind (x:Boolean)IsThreeStateTrue}" />
