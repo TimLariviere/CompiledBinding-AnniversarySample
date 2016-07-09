@@ -13,6 +13,7 @@
         <TextBlock Text="Function Binding" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" />
         <TextBlock Text="{x:Bind Today.ToString('d', {x:Null})}" />
         <TextBlock Text="{x:Bind Roberts.GetFullname()}" />
+        <TextBlock Text="{x:Bind GetPersonFullname(Someone)}" />
         <TextBlock Text="{x:Bind GetHelloWorld()}" />
 
         <!-- 02 - Dictionary indexers -->

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Windows.UI.Xaml.Controls;
 
 namespace CompiledBinding_AnniversaryEdition_Sample
@@ -20,6 +21,17 @@ namespace CompiledBinding_AnniversaryEdition_Sample
             Firstname = "Dread Pirate",
             Lastname = "Roberts"
         };
+
+        public Person Someone = new Person()
+        {
+            Firstname = "Some",
+            Lastname = "One"
+        };        
+
+        public string GetPersonFullname(Person person)
+        {
+            return person.GetFullname();
+        }
 
         public string GetHelloWorld()
         {
